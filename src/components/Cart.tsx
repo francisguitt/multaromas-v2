@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingBag, Plus, Minus, Trash2, MessageCircle } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { number } from "@/utils/number";
 
 export interface CartItem {
   id: number;
@@ -42,7 +43,7 @@ const Cart = ({ items, onUpdateQuantity, onRemoveItem, onCheckout }: CartProps) 
     const total = getTotalPrice().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     const fullMessage = `Olá! Gostaria de finalizar minha compra:\n\n${message}\n\nTotal: ${total}`;
     
-    const whatsappUrl = `https://wa.me/5511977838504?text=${encodeURIComponent(fullMessage)}`;
+    const whatsappUrl = `https://wa.me/${number.num}?text=${encodeURIComponent(fullMessage)}`;
     window.open(whatsappUrl, '_blank');
     onCheckout();
     setIsOpen(false);

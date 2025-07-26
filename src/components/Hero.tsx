@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-perfumes.jpg";
-
+import { number } from "@/utils/number";
 const Hero = () => {
   const handleKnowMore = () => {
     const message = "Olá! Gostaria de saber mais sobre a Mult Aromas e seus produtos.";
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${number.num}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
