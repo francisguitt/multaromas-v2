@@ -51,7 +51,7 @@ const Header = ({ cartItems, onUpdateCartQuantity, onRemoveCartItem, onCartCheck
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex justify-center space-x-8">
             <button 
               onClick={() => scrollToSection('home')} 
               className="text-foreground hover:text-primary transition-colors font-medium"
@@ -79,10 +79,10 @@ const Header = ({ cartItems, onUpdateCartQuantity, onRemoveCartItem, onCartCheck
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-2">
-            <Button variant="ghost" size="icon">
+          <div className="hidden md:flex justify-center space-x-2">
+            {/* <Button variant="ghost" size="icon">
               <Search className="h-5 w-5" />
-            </Button>
+            </Button> */}
             <Button variant="ghost" size="icon">
               <Heart className="h-5 w-5" />
             </Button>
@@ -96,9 +96,9 @@ const Header = ({ cartItems, onUpdateCartQuantity, onRemoveCartItem, onCartCheck
 
           {/* Mobile Actions */}
           <div className="flex md:hidden items-center space-x-2">
-            <Button variant="ghost" size="icon">
+            {/* <Button variant="ghost" size="icon"> 
               <Search className="h-4 w-4" />
-            </Button>
+            </Button> */}
             <Cart 
               items={cartItems}
               onUpdateQuantity={onUpdateCartQuantity}

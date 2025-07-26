@@ -5,18 +5,18 @@ const About = () => {
   const features = [
     {
       icon: Sparkles,
-      title: "Ingredientes Premium",
-      description: "Selecionamos os melhores ingredientes naturais de todo o mundo para oferecer fragrâncias únicas e duradouras."
+      title: "Seleção Premium",
+      description: "Nossa equipe de especialistas seleciona as melhores fragrâncias de marcas renomadas, garantindo uma coleção diversificada e de alta qualidade."
     },
     {
       icon: Award,
-      title: "Qualidade Certificada",
-      description: "Todos os nossos produtos passam por rigorosos testes de qualidade e são certificados pelos principais órgãos internacionais."
+      title: "Autenticidade Garantida",
+      description: "Trabalhamos apenas com fornecedores oficiais e garantimos a autenticidade de todos os nossos produtos. Sua confiança é nossa prioridade."
     },
     {
       icon: Users,
-      title: "Tradição Familiar",
-      description: "Com mais de 20 anos de experiência, nossa empresa familiar se dedica à arte da perfumaria com paixão e expertise."
+      title: "Atendimento Especializado",
+      description: "Com mais de 20 anos de experiência no mercado, oferecemos um atendimento personalizado para ajudar você a encontrar o perfume perfeito."
     }
   ];
 
@@ -29,15 +29,15 @@ const About = () => {
               Sobre a <span className="text-primary">Mult Aromas</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Há mais de duas décadas, a Multa Aromas tem sido sinônimo de elegância 
-              e sofisticação no mundo das fragrâncias. Nossa paixão pela perfumaria 
-              começou como um sonho familiar e hoje se transformou em uma das marcas 
-              mais respeitadas do Brasil.
+              Há mais de duas décadas, a Mult Aromas tem sido sinônimo de elegância 
+              e sofisticação no universo das fragrâncias. Nossa paixão pela perfumaria 
+              começou como um sonho familiar e hoje se reflete em uma curadoria cuidadosa, 
+              que nos posiciona entre as lojas mais queridas do Brasil.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Cada fragrância é cuidadosamente desenvolvida por nossos mestres perfumistas, 
-              que combinam técnicas tradicionais com inovação moderna para criar 
-              experiências olfativas inesquecíveis.
+              Nossa especialidade é selecionar perfumes excepcionais. Firmamos parcerias com 
+              as melhores casas de perfumaria para trazer até você uma coleção exclusiva, 
+              repleta de experiências olfativas inesquecíveis.
             </p>
           </div>
 

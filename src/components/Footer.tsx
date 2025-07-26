@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import ContactForm from './ContactForm';
 
 const Footer = () => {
   return (
@@ -57,25 +57,25 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Newsletter</h4>
-            <p className="text-cream/80 mb-4">
-              Receba novidades e ofertas exclusivas
-            </p>
-            <div className="flex space-x-2">
-              <Input 
-                placeholder="Seu e-mail" 
-                className="bg-cream/10 border-cream/20 text-cream placeholder:text-cream/60"
-              />
-              <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground">
-                Enviar
-              </Button>
-            </div>
+            <h4 className="text-lg font-semibold mb-4">Fale Conosco</h4>
+            <ContactForm />
           </div>
         </div>
 
         <div className="border-t border-cream/20 mt-12 pt-8 text-center">
-          <p className="text-cream/60">
-            © 2024 Multa Aromas. Todos os direitos reservados.
+          <p className="text-cream/60 mb-2">
+            © {new Date().getFullYear()} Mult Aromas. Todos os direitos reservados.
+          </p>
+          <p className="text-cream/60 text-sm">
+            Desenvolvido com <span role="img" aria-label="coração">❤️</span> por{' '}
+            <a 
+              href="https://instagram.com/guittzoom"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Guittzoom
+            </a>
           </p>
         </div>
       </div>

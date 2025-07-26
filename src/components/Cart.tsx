@@ -42,7 +42,7 @@ const Cart = ({ items, onUpdateQuantity, onRemoveItem, onCheckout }: CartProps) 
     const total = getTotalPrice().toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     const fullMessage = `Olá! Gostaria de finalizar minha compra:\n\n${message}\n\nTotal: ${total}`;
     
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(fullMessage)}`;
+    const whatsappUrl = `https://wa.me/5511977838504?text=${encodeURIComponent(fullMessage)}`;
     window.open(whatsappUrl, '_blank');
     onCheckout();
     setIsOpen(false);

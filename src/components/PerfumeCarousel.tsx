@@ -13,10 +13,16 @@ import perfume3 from "@/assets/perfume-3.jpg";
 import perfume4 from "@/assets/perfume-4.jpg";
 import perfume5 from "@/assets/perfume-5.jpg";
 
-const PerfumeCarousel = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
+import { CartItem } from "./Cart";
+
+interface PerfumeCarouselProps {
+  onAddToCart: (product: CartItem) => void;
+}
+
+const PerfumeCarousel = ({ onAddToCart }: PerfumeCarouselProps) => {
   
-  const autoplay = Autoplay({ delay: 4000, stopOnInteraction: false });
+  
+  const autoplay = Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: false });
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
       loop: true,
@@ -86,18 +92,7 @@ const PerfumeCarousel = () => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  const toggleAutoplay = useCallback(() => {
-    const autoplayPlugin = emblaApi?.plugins()?.autoplay;
-    if (!autoplayPlugin) return;
-
-    if (autoplayPlugin.isPlaying()) {
-      autoplayPlugin.stop();
-      setIsPlaying(false);
-    } else {
-      autoplayPlugin.play();
-      setIsPlaying(true);
-    }
-  }, [emblaApi]);
+  
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -173,6 +168,10 @@ const PerfumeCarousel = () => {
                         </span>
                         <Button 
                           className="bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            onAddToCart(perfume as CartItem);
+                          }}
                         >
                           Comprar
                         </Button>
@@ -223,19 +222,7 @@ const PerfumeCarousel = () => {
             ))}
           </div>
 
-          {/* Play/Pause Button */}
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={toggleAutoplay}
-            className="border-primary/20 hover:bg-primary hover:text-primary-foreground"
-          >
-            {isPlaying ? (
-              <Pause className="h-4 w-4" />
-            ) : (
-              <Play className="h-4 w-4" />
-            )}
-          </Button>
+          
         </div>
       </div>
     </section>

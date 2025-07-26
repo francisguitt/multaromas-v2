@@ -8,14 +8,25 @@ import featuredImage from "@/assets/featured-perfume.jpg";
 import ProductModal from "./ProductModal";
 import { CartItem } from "./Cart";
 
+export interface Product {
+  id: number;
+  name: string;
+  price: string;
+  originalPrice?: string;
+  image: string;
+  rating: number;
+  badge: string;
+  description: string;
+}
+
 interface ProductsProps {
-  onAddToCart: (product: any) => void;
+  onAddToCart: (product: Product) => void;
 }
 
 const Products = ({ onAddToCart }: ProductsProps) => {
-  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const products = [
+  const products: Product[] = [
     {
       id: 1,
       name: "Essence Rose",
@@ -64,8 +75,8 @@ const Products = ({ onAddToCart }: ProductsProps) => {
             Nossa <span className="text-primary">Coleção</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Descubra fragrâncias únicas criadas com ingredientes premium 
-            e técnicas artesanais tradicionais
+            Descubra fragrâncias únicas de marcas renomadas, selecionadas 
+            com os mais altos padrões de qualidade.
           </p>
         </div>
 

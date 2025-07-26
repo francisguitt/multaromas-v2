@@ -16,24 +16,24 @@ const Index = () => {
 
   const handleAddToCart = (product: any) => {
     const existingItem = cartItems.find(item => item.id === product.id);
-    
+
     if (existingItem) {
-      setCartItems(cartItems.map(item =>
-        item.id === product.id
-          ? { ...item, quantity: item.quantity + 1 }
-          : item
-      ));
-    } else {
-      const newItem: CartItem = {
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        image: product.image,
-        quantity: 1
-      };
-      setCartItems([...cartItems, newItem]);
+      toast({
+        title: "Este item já está no seu carrinho.",
+        description: "Você pode alterar a quantidade na cesta.",
+      });
+      return; 
     }
-    
+
+    const newItem: CartItem = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      quantity: 1
+    };
+    setCartItems([...cartItems, newItem]);
+
     toast({
       title: "Produto adicionado!",
       description: `${product.name} foi adicionado ao carrinho.`,
@@ -55,7 +55,6 @@ const Index = () => {
   };
 
   const handleCartCheckout = () => {
-    setCartItems([]);
     toast({
       title: "Pedido enviado!",
       description: "Seu pedido foi enviado via WhatsApp.",
@@ -71,7 +70,7 @@ const Index = () => {
         onCartCheckout={handleCartCheckout}
       />
       <Hero />
-      <PerfumeCarousel />
+      <PerfumeCarousel onAddToCart={handleAddToCart} />
       <About />
       <Products onAddToCart={handleAddToCart} />
       <ImageGrid />

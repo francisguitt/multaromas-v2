@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-perfumes.jpg";
 
 const Hero = () => {
+  const handleKnowMore = () => {
+    const message = "Olá! Gostaria de saber mais sobre a Mult Aromas e seus produtos.";
+    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div 
@@ -24,16 +30,19 @@ const Hero = () => {
             Explore o mundo dos aromas premium e encontre o perfume perfeito para cada momento.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-elegant hover:opacity-90 transition-all"
-            >
-              Explorar Coleção
-            </Button>
+            <a href="#produtos">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-elegant hover:opacity-90 transition-all"
+              >
+                Explorar Coleção
+              </Button>
+            </a>
             <Button 
               size="lg" 
               variant="outline" 
               className="border-primary hover:bg-primary hover:text-primary-foreground"
+              onClick={handleKnowMore}
             >
               Saiba Mais
             </Button>
